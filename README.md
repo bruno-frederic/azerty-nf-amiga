@@ -1,1 +1,150 @@
-# azerty-nf-amiga
+﻿# Azerty-NF-Amiga
+### A French optimized AZERTY NF Z71-300 keymap for *𝔸miga* computers
+
+**Azerty-NF-Amiga** is a modern French keyboard layout for Commodore *Amiga*
+computers, designed to address the many shortcomings of the traditional AZERTY
+layout historically used in France.
+
+This layout complies with the official French standard **NF Z71-300**, which
+defines a comprehensive and typographically correct AZERTY keyboard.
+For more information about this standard, please refer to [the official AFNOR
+article and FAQ.](https://www.afnor.org/decryptages/electrotechnologies/clavier-francais-norme-volontaire/)
+
+This standard allows input of the complete set of characters required for
+proper French writing. It includes characters missing from the legacy AZERTY
+layout but essential to French orthography, such as:
+`É Ç æ Æ « »`
+
+---
+
+## 🇫🇷 Présentation en français
+
+### Une disposition de clavier AZERTY NF Z71-300 pour les ordinateurs *𝔸miga*
+
+**Azerty-NF-Amiga** est une disposition de clavier française moderne pour les
+ordinateurs Commodore *Amiga*, conçue pour corriger les nombreuses limitations
+de l’AZERTY traditionnel utilisé en France.
+
+Cette disposition est conforme à la norme française **NF Z71-300**, qui définit
+un clavier AZERTY complet et typographiquement correct.
+Pour plus d’informations, consultez [l’article officiel et la FAQ de l’AFNOR.](https://www.afnor.org/decryptages/electrotechnologies/clavier-francais-norme-volontaire/)
+
+Cette norme permet la saisie de l’ensemble des caractères nécessaires à l’écriture du
+français, y compris ceux absents de l’AZERTY historique mais indispensables à
+l’orthographe française, tels que :
+`É Ç æ Æ « »`
+
+La disposition couvre également les caractères utilisés dans toutes les langues
+régionales de France ainsi que dans les langues de l’Union européenne basées sur
+l’alphabet latin.
+De nombreux symboles mathématiques sont également accessibles.
+
+Enfin, les symboles sont regroupés de manière logique : les parenthèses ouvrantes
+et fermantes sont placées sur des touches adjacentes, les symboles mathématiques
+se trouvent à droite du clavier près de la touche <kbd>Entrée</kbd>, et la
+ponctuation courante est positionnée sur la rangée inférieure, à droite de la
+touche <kbd>N</kbd>.
+
+---
+
+## ✨ Fonctionnalités
+
+- Saisie de **tous les caractères ISO 8859-1** pris en charge par AmigaOS
+- Conformité à la norme AFNOR **NF Z71-300**
+- Organisation logique et ergonomique des symboles
+- Compatible avec les Amiga classiques
+
+---
+
+## ⚙️ Pré-requis
+
+- **AmigaOS 1.0 ou supérieur**
+
+---
+
+## 📦 Installation
+
+1. Télécharger le paquet **Azerty-NF** depuis Aminet :
+   [driver/input/Azerty-NF](https://aminet.net/package/driver/input/Azerty-NF)
+   ou depuis la [section *Releases* de GitHub](https://github.com/bruno-frederic/azerty-nf-amiga/releases).
+
+2. L’archive inclut un script pour l’outil *Installer*.
+   Cette méthode est **recommandée**, car elle configure automatiquement les
+   fichiers et les chemins nécessaires.
+
+---
+
+### Installation manuelle
+
+Sur les systèmes AmigaOS ne disposant pas de l’outil *Installer*, la disposition
+**Azerty-NF** peut être installée manuellement.
+
+1. Copier le fichier de keymap dans le répertoire système approprié :
+
+   - `Azerty-NF/f-nf` → `DEVS:Keymaps`
+
+2. Activer la disposition **f-nf**, selon la version d’AmigaOS :
+
+   - **AmigaOS 1.x** :
+     Ajouter la commande suivante dans la `Startup-Sequence` :
+     ```
+     SYS:System/SetMap f-nf
+     ```
+
+   - **AmigaOS 2.04** :
+     Lancer la commande suivante dans le *Shell*, puis sélectionner **f-nf** :
+     ```
+     PickMap.hd sys:
+     ```
+
+   - **AmigaOS 3.x** :
+     Ouvrir **Prefs > Input**, puis choisir la disposition **f-nf**.
+
+---
+
+## 📖 Mode d’emploi
+
+L’AFNOR propose une page expliquant en détail les principes et le fonctionnement
+de la disposition AZERTY normalisée :
+https://norme-azerty.fr/#explore
+
+---
+
+## 🐞 Limitations
+
+Les Amiga classiques fonctionnent avec la page de codes **ISO 8859-1**, ce qui
+entraîne plusieurs limitations.
+
+- Les ligatures **Œ** (U+0152) et **œ** (U+0153) n’existent pas en ISO 8859-1.
+- Le mode grec n’est pas implémenté : **µ** est le seul caractère grec présent
+  (accessible via <kbd>Alt</kbd> + <kbd>G</kbd>).
+- Le mode monétaire n’est pas implémenté, car seuls les caractères suivants sont
+  disponibles en ISO 8859-1 :
+  - **¤** (U+00A4) — symbole monétaire générique (<kbd>Alt</kbd> + <kbd>F</kbd>)
+  - **¥** (U+00A5) — *Yen* (<kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>Y</kbd>)
+  - **¢** (U+00A2) — *Cent*
+- L’**espace fine insécable** (U+202F) est remplacée par une **espace insécable**
+  (`NBSP`, U+00A0) sur la touche <kbd>Espace</kbd>.
+- Les guillemets-apostrophes typographiques simples (`‘ ’`, U+2018 et U+2019) sont remplacés par l’apostrophe
+  droite (`'`, U+0027).
+- Les guillemets-apostrophes typographiques doubles (`“ ”`, U+201C et U+201D) sont remplacés par le guillemet
+  double anglais (`"`, U+0022).
+
+---
+
+## 🛠️ Environnement de travail
+
+- **KeyMapEditor** v1.7 : [util/misc/KME-UPD](http://aminet.net/package/util/misc/KME-UPD)
+
+---
+
+## 🙏 Crédits
+
+- **KeyMapEditor** — Copyright © Christian Stiens, *Wishmaster*
+
+---
+
+## ⚖️ Licence
+
+This project is licensed under the **MIT License**.
+See the [LICENSE](LICENSE) file for details.

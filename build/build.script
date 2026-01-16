@@ -1,0 +1,50 @@
+; This script builds Azerty-NF package under AmigaOS 3.2 Shell
+;
+; Must be run from "build/" dir :
+; EXECUTE build.script
+;
+
+
+; Make this script executable :
+PROTECT #?.script +SRE
+
+set InitialDir `cd`
+CD /
+
+SET LatestPackagePath      ${InitialDir}/Azerty-NF.lha
+
+echo "Build the LHA package:"
+DELETE  "$LatestPackagePath"
+DELETE  "RAM:Azerty-NF#?"                  ALL QUIET
+
+MAKEDIR RAM:Azerty-NF
+COPY  FROM "assets/Azerty-NF.info"         TO RAM:
+
+COPY  FROM "assets/f-nf#?"                 TO RAM:Azerty-NF
+
+COPY  FROM "build/Install#?"               TO RAM:Azerty-NF
+
+COPY  FROM "docs/Azerty-NF.readme"         TO RAM:Azerty-NF
+COPY  FROM "assets/Azerty-NF.readme.info"  TO RAM:Azerty-NF
+
+
+COPY  FROM "LICENSE"                       TO RAM:Azerty-NF
+COPY  FROM "assets/LICENSE.info"           TO RAM:Azerty-NF
+
+
+echo "Setting file protections:"
+PROTECT "RAM:Azerty-NF.info"               RWD
+PROTECT "RAM:Azerty-NF/#?"                 RWD
+
+CD RAM:
+lha -r -a -Qa a "$LatestPackagePath"  Azerty-NF Azerty-NF.info
+;    -r  Collect files recursively
+;    -a  Preserve file attributes (D)
+;    -Qa Use simple console I/O
+
+CD $InitialDir
+
+echo "Package created. To test it, extract the archive into RAM:"
+echo "DELETE DEVS:Keymaps/f-nf#?"
+echo CD RAM:
+echo lha x "$LatestPackagePath"

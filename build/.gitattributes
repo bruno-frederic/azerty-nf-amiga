@@ -1,0 +1,13 @@
+*.arexx          text eol=lf
+*.script         text eol=lf
+Install          text eol=lf
+
+# Object file
+*.o              binary
+
+# Amiga-specific binary formats
+*.info           binary
+*.lha            binary
+*.library        binary
+*.lib            binary
+*.device         binary

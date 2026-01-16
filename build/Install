@@ -1,0 +1,49 @@
+; $VER: Azerty-NF 1.0 (14.1.26)
+
+(SET @app-name      "Azerty f-nf keymap")
+(SET @default-dest  "DEVS:Keymaps")
+
+(welcome)
+
+(COPYFILES
+	(prompt "Copying keymap file")
+	(help @copyfiles-help)
+	(source "f-nf")
+	(dest   @default-dest)
+	(infos)
+	(noposition)
+)
+
+(set #os-vernum (getversion "libs:version.library"))
+(set #os-ver (/ #os-vernum 65536))
+
+(if (>= #os-ver 39)  ; AmigaOS 3.0+
+	(
+		(working "Opening Input Prefs\n\nPlease select the f-nf keymap and Save.")
+		(run "SYS:prefs/input")
+	)
+	; else
+	(
+		(if (>= #os-ver 36)  ; AmigaOS 2.04+
+			(
+				(working "Setting the default keyboard.")
+				(run 'echo >ENVARC:sys/keyboard "f-nf"')
+  				(delete "DEVS:keymaps/f-nf.info")
+
+				(message "The keymap has been set to f-nf.\n"
+						 "You must reboot to enable it.\n\n"
+						 "To change it again, run the below command in shell:\n\n"
+						 "PickMap.hd sys:"
+				(all))
+			)
+			; else
+			(
+				(message "Add a setmap command to your startup-sequence:\n\n"
+						"SYS:System/SetMap f-nf"
+				(all))
+			)
+		)
+	)
+)
+
+(exit)
