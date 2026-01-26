@@ -31,7 +31,7 @@ Pour plus d’informations, consultez [l’article officiel et la FAQ de l’AFN
 
 Cette norme permet la saisie de l’ensemble des caractères nécessaires à l’écriture du
 français, y compris ceux absents de l’AZERTY historique mais indispensables à
-l’orthographe française, tels que :
+l’orthographe française, tels que :
 `É Ç æ Æ « »`
 
 La disposition couvre également les caractères utilisés dans toutes les langues
@@ -39,7 +39,7 @@ régionales de France ainsi que dans les langues de l’Union européenne basée
 l’alphabet latin.
 De nombreux symboles mathématiques sont également accessibles.
 
-Enfin, les symboles sont regroupés de manière logique : les parenthèses ouvrantes
+Enfin, les symboles sont regroupés de manière logique : les parenthèses ouvrantes
 et fermantes sont placées sur des touches adjacentes, les symboles mathématiques
 se trouvent à droite du clavier près de la touche <kbd>Entrée</kbd>, et la
 ponctuation courante est positionnée sur la rangée inférieure, à droite de la
@@ -64,7 +64,7 @@ touche <kbd>N</kbd>.
 
 ## 📦 Installation
 
-1. Télécharger le paquet **Azerty-NF** depuis Aminet :
+1. Télécharger le paquet **Azerty-NF** depuis Aminet :
    [driver/input/Azerty-NF](https://aminet.net/package/driver/input/Azerty-NF)
    ou depuis la [section *Releases* de GitHub](https://github.com/bruno-frederic/azerty-nf-amiga/releases).
 
@@ -79,25 +79,25 @@ touche <kbd>N</kbd>.
 Sur les systèmes AmigaOS ne disposant pas de l’outil *Installer*, la disposition
 **Azerty-NF** peut être installée manuellement.
 
-1. Copier le fichier de keymap dans le répertoire système approprié :
+1. Copier le fichier de keymap dans le répertoire système approprié :
 
    - `Azerty-NF/f-nf` → `DEVS:Keymaps`
 
 2. Activer la disposition **f-nf**, selon la version d’AmigaOS :
 
-   - **AmigaOS 1.x** :
+   - **AmigaOS 1.\* ; 2.00 & 2.02** :
      Ajouter la commande suivante dans la `Startup-Sequence` :
      ```
      SYS:System/SetMap f-nf
      ```
 
-   - **AmigaOS 2.04** :
+   - **AmigaOS 2.04 & 2.05** :
      Lancer la commande suivante dans le *Shell*, puis sélectionner **f-nf** :
      ```
      PickMap.hd sys:
      ```
 
-   - **AmigaOS 3.x** :
+   - **AmigaOS 2.1 & 3.\*** :
      Ouvrir **Prefs > Input**, puis choisir la disposition **f-nf**.
 
 ---
@@ -105,7 +105,7 @@ Sur les systèmes AmigaOS ne disposant pas de l’outil *Installer*, la disposit
 ## 📖 Mode d’emploi
 
 L’AFNOR propose une page expliquant en détail les principes et le fonctionnement
-de la disposition AZERTY normalisée :
+de la disposition AZERTY normalisée :
 https://norme-azerty.fr/#explore
 
 ---
@@ -116,10 +116,10 @@ Les Amiga classiques fonctionnent avec la page de codes **ISO 8859-1**, ce qui
 entraîne plusieurs limitations.
 
 - Les ligatures **Œ** (U+0152) et **œ** (U+0153) n’existent pas en ISO 8859-1.
-- Le mode grec n’est pas implémenté : **µ** est le seul caractère grec présent
+- Le mode grec n’est pas implémenté : **µ** est le seul caractère grec présent
   (accessible via <kbd>Alt</kbd> + <kbd>G</kbd>).
 - Le mode monétaire n’est pas implémenté, car seuls les caractères suivants sont
-  disponibles en ISO 8859-1 :
+  disponibles en ISO 8859-1 :
   - **¤** (U+00A4) — symbole monétaire générique (<kbd>Alt</kbd> + <kbd>F</kbd>)
   - **¥** (U+00A5) — *Yen* (<kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>Y</kbd>)
   - **¢** (U+00A2) — *Cent*
@@ -134,7 +134,7 @@ entraîne plusieurs limitations.
 
 ## 🛠️ Environnement de travail
 
-- **KeyMapEditor** v1.7 : [util/misc/KME-UPD](http://aminet.net/package/util/misc/KME-UPD)
+- **KeyMapEditor** v1.7 : [util/misc/KME-UPD](http://aminet.net/package/util/misc/KME-UPD)
 
 ---
 

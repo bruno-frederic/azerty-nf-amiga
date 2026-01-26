@@ -1,4 +1,4 @@
-; $VER: Azerty-NF 1.0 (14.1.26)
+; $VER: Azerty-NF 1.1-dev (14.1.26)
 
 (SET @app-name      "Azerty f-nf keymap")
 (SET @default-dest  "DEVS:Keymaps")
@@ -17,14 +17,14 @@
 (set #os-vernum (getversion "libs:version.library"))
 (set #os-ver (/ #os-vernum 65536))
 
-(if (>= #os-ver 39)  ; AmigaOS 3.0+
+(if (>= #os-ver 38)  ; AmigaOS 2.1+
 	(
 		(working "Opening Input Prefs\n\nPlease select the f-nf keymap and Save.")
 		(run "SYS:prefs/input")
 	)
 	; else
 	(
-		(if (>= #os-ver 36)  ; AmigaOS 2.04+
+		(if (>= #os-ver 37)  ; AmigaOS 2.04 & 2.05
 			(
 				(working "Setting the default keyboard.")
 				(run 'echo >ENVARC:sys/keyboard "f-nf"')
