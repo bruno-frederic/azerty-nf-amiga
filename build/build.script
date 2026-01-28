@@ -36,6 +36,10 @@ echo "Setting file protections:"
 PROTECT "RAM:Azerty-NF.info"               RWD
 PROTECT "RAM:Azerty-NF/#?"                 RWD
 
+; Under AmigaOS 2.04 & 2.05, PickMap.HD shows this description :
+echo "Setting file comment."
+Filenote "RAM:Azerty-NF/f-nf" "Français AZERTY NF Z71-300"
+
 CD RAM:
 lha -r -a -Qa a "$LatestPackagePath"  Azerty-NF Azerty-NF.info
 ;    -r  Collect files recursively
