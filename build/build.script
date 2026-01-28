@@ -5,7 +5,7 @@
 ;
 
 
-; Make this script executable :
+; Allow this script to be executed directly for subsequent runs :
 PROTECT #?.script +SRE
 
 set InitialDir `cd`
@@ -47,8 +47,3 @@ lha -r -a -Qa a "$LatestPackagePath"  Azerty-NF Azerty-NF.info
 ;    -Qa Use simple console I/O
 
 CD $InitialDir
-
-echo "Package created. To test it, extract the archive into RAM:"
-echo "DELETE DEVS:Keymaps/f-nf#?"
-echo CD RAM:
-echo lha x "$LatestPackagePath"

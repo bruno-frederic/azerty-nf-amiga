@@ -1,0 +1,34 @@
+; This script tests the installation of the Azerty-NF package under the AmigaOS Shell.
+; This script first removes f-nf  from DEVS:Keymaps
+;
+; Must be run from "build/" dir :
+; EXECUTE testpack.script
+;
+
+
+; Allow this script to be executed directly for subsequent runs :
+PROTECT testpack.script +SRE
+
+; AmigaOS 1.3 Shell does not support $variables, so ASSIGN is used instead
+ASSIGN  InitialDir:  ""
+
+DELETE DEVS:Keymaps/f-nf#?
+
+CD RAM:
+DELETE Azerty-NF#?  ALL
+
+echo "------------Unarchive latest package:"
+lha -Qa x "InitialDir:Azerty-NF.lha"
+
+echo "------------ Installer:"
+CD Azerty-NF
+WHICH >NIL: Installer
+IF WARN
+  ECHO "------------Installer tool missing so falling back to simple copy:"
+  COPY FROM f-nf#?  TO DEVS:Keymaps  CLONE
+ELSE
+  ECHO "Installer tool found"
+    Installer Install APPNAME Azerty-NF MINUSER NOVICE
+ENDIF
+
+CD InitialDir:
