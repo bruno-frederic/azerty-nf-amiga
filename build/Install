@@ -34,13 +34,13 @@
 						 "You must reboot to enable it.\n\n"
 						 "To change it again, run the below command in shell:\n\n"
 						 "PickMap.hd sys:"
-				(all))
+				)
 			)
 			; else
 			(
 				(message "Add a setmap command to your startup-sequence:\n\n"
 						"SYS:System/SetMap f-nf"
-				(all))
+				)
 			)
 		)
 	)
