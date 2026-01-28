@@ -58,7 +58,7 @@ touche <kbd>N</kbd>.
 
 ## ⚙️ Pré-requis
 
-- **AmigaOS 1.0 ou supérieur**
+- **AmigaOS 1.2 ou supérieur**
 
 ---
 
@@ -85,7 +85,7 @@ Sur les systèmes AmigaOS ne disposant pas de l’outil *Installer*, la disposit
 
 2. Activer la disposition **f-nf**, selon la version d’AmigaOS :
 
-   - **AmigaOS 1.\* ; 2.00 & 2.02** :
+   - **AmigaOS 1.2 à 2.02** :
      Ajouter la commande suivante dans la `Startup-Sequence` :
      ```
      SYS:System/SetMap f-nf
@@ -97,7 +97,7 @@ Sur les systèmes AmigaOS ne disposant pas de l’outil *Installer*, la disposit
      PickMap.hd sys:
      ```
 
-   - **AmigaOS 2.1 & 3.\*** :
+   - **AmigaOS 2.1 à 3.9** :
      Ouvrir **Prefs > Input**, puis choisir la disposition **f-nf**.
 
 ---
