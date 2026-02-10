@@ -1,4 +1,4 @@
-; $VER: Azerty-NF 1.1-dev (14.1.26)
+; $VER: Azerty-NF 1.1 (11.2.26)
 
 (SET @app-name      "Azerty f-nf keymap")
 (SET @default-dest  "DEVS:Keymaps")

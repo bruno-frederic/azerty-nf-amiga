@@ -1,8 +1,8 @@
 Short:        A French AZERTY NF Z71-300 keymap
-Uploader:     Bruno FREDERIC
 Author:       Bruno FREDERIC
+Uploader:     bruno.frederic+aminet@gm...
 Type:         driver/input
-Version:      1.1-dev
+Version:      1.1
 Architecture: generic
 Distribution: Aminet
 
